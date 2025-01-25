@@ -1,8 +1,8 @@
 <?php
-    $title = 'about-us';
+    $title = 'php';
     require_once "blocks/header.php";
 ?>
-<h1>Про нас</h1>
+<h1>Главная страница</h1>
 <?php
     require_once "blocks/footer.php";
 ?>
