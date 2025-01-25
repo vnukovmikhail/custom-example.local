@@ -6,7 +6,7 @@
 }
 section.forms {
     display: flex;
-    margin: 5px 0;
+    margin: 5px;
     gap: 5px;
 }
 section.forms fieldset {
