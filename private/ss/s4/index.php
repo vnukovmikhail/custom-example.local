@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <?php
     session_start();
-    error_reporting(0); 
+    // error_reporting(0); 
     $mysql = new mysqli("MySQL-8.2", "root", "", "php-example.local");
     $result = $mysql->query("SELECT * FROM `users`");
-    echo 'количество пользователей:'.$result->num_rows;
+    echo 'количество пользователей: '.$result->num_rows;
 ?>
 <body>
     <fieldset style="padding: 5px;">
@@ -23,17 +22,12 @@
             <label><?=$_SESSION['success']?></label>
         </form>
     </fieldset>
-    <fieldset>
-        <legend>текущие пользователи:</legend>
-        <?php
-        if($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo 'ID:'.$row['id'].' | '.$row['login'].'<br>';
-            }
+    <?php
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo 'ID:'.$row['id'].'|'.$row['login'].'<br>';
         }
-        ?>
-    </fieldset>
-    
-
+    }
+?>
 </body>
 </html>
